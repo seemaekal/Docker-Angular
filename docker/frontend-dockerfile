@@ -1,0 +1,17 @@
+FROM node.js:8 AS front
+
+WORKDIR /var/www/frontend
+
+COPY package.json .
+
+RUN cd $(npm root -g)/npm \
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+USER node
+
+CMD npm start

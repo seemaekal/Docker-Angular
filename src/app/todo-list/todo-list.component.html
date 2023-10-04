@@ -1,0 +1,15 @@
+<div>
+    <h2>TODO List</h2>
+  
+    <!-- Display the list of TODO items -->
+    <ul>
+      <li *ngFor="let item of todoItems; let i = index">
+        {{ item }}
+        <button (click)="removeTodo(i)" class="btn remove" >Remove</button>
+      </li>
+    </ul>
+  
+    <!-- Input box to add a new TODO item -->
+    <input type="text" [(ngModel)]="newTodo" placeholder="Add a new TODO" class="text">
+    <button (click)="addTodo()" class="btn add" >Add</button>
+  </div>  
